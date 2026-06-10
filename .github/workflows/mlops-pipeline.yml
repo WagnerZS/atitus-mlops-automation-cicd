@@ -25,23 +25,19 @@ jobs:
 
     - name: Validar dados
       run: |
-        python src/data_validation.py
+        python src/validate_data.py
 
     - name: Executar testes
       run: |
         pytest
 
-    - name: Validar os dados
-      run: |
-        python src/data_validation.py
-
     - name: Treinar modelo
       run: |
-        python src/train_model.py
+        python src/train.py
 
     - name: Avaliar modelo
       run: |
-        python src/evaluate_model.py
+        python src/evaluate.py
 
     - name: Publicar artefatos
       uses: actions/upload-artifact@v4
